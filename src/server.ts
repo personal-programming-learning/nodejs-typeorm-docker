@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
+import { UserRouter } from './routes/user.router';
 
 export class ServerBootstrap {
 
@@ -12,15 +13,14 @@ export class ServerBootstrap {
     this.app.use(morgan('dev'))
     this.app.use(cors());
 
-    this.initRoutes();
+    // Routes
+    this.app.use('/api', this.routers())
   }
 
-  public initRoutes(){
-    this.app.get('/api/hola', (req: Request, res: Response, next: any) => {
-      res.status(200).json({
-        message: 'Hola mundo - Nodejs !!!'
-      })
-    })
+  public routers(): Array<express.Router>{
+    return [
+      new UserRouter().router,
+    ];
   }
 
   public listen(callback: (port: number) => void): void {
