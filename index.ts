@@ -1,7 +1,7 @@
 import { ServerBootstrap } from "./src/server";
 
-import * as dotenv from "dotenv";
-dotenv.config({ path: `${__dirname}/environments/.${process.env.ENV || 'local'}.env` });
+// import * as dotenv from "dotenv";
+// dotenv.config({ path: `${__dirname}/environments/.${process.env.ENV || 'local'}.env` });
 
 const server = new ServerBootstrap();
 

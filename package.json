@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build-ts && node dist/server.js",
     "start:dev": "npm run build-ts && export ENV=dev && cp -r environments/. dist/environments && concurrently \"tsc -w\" \"nodemon index.js \" ",
+    "start:prod": "SET ENV=production && npm start",
     "dev": "export ENV=dev && nodemon index.ts",
     "build-ts": "rm -rf dist && tsc --sourceMap false",
     "copy_env_dev": "mkdir -p ./dist/environments && cp environments/.dev.env dist/environments/.",

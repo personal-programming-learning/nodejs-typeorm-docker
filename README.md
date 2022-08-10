@@ -103,3 +103,5 @@ METODOS:
 | **Migraciones** | <span style="color: #fc7b03">TEORICO / PRACTICO</span> | Por que migraciones?                                                        |
 | **Migraciones** | <span style="color: #94fc03">PRACTICO</span>           | Creando nuestros script de `typeorm` `migration:generate` y `migration:run` |
 | **Migraciones** | <span style="color: #94fc03">PRACTICO</span>           | Correr migraciones y probando nuestro codigo                                |
+
+## URL curso: https://www.youtube.com/playlist?list=PLergODdA95keGVKSOPApWRw0XuA-ivH_u
