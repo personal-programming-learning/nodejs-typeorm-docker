@@ -1,4 +1,5 @@
 import { Column, Entity, OneToOne } from 'typeorm';
+
 import { BaseEntity } from '../../config/base.entity';
 import { CustomersEntity } from '../../customer/entities/customer.entity';
 
@@ -19,14 +20,14 @@ export class UserEntity extends BaseEntity {
   @Column({ length: 100 })
   email!:string;
 
-  @Column()
+  @Column({ select: false })
   password!:string;
 
   @Column()
   city?:string;
 
   @Column()
-  province!:number;
+  province!:string;
 
   @OneToOne(() => CustomersEntity, (customer) => customer.user)
   customer!: CustomersEntity;

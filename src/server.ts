@@ -3,7 +3,6 @@ import morgan from 'morgan';
 import cors from 'cors';
 import { UserRouter } from './user/user.router';
 import { ConfigServer } from './config/config';
-import { DataSource } from 'typeorm';
 
 export class ServerBootstrap extends ConfigServer {
 
@@ -30,12 +29,8 @@ export class ServerBootstrap extends ConfigServer {
     ];
   }
 
-  async dbConnect(): Promise<DataSource>{
-    return await new DataSource(this.typeORMConfig).initialize();
-  }
-
   public listen(callback: (port: number) => void): void {
-    let port = parseInt(this.getNumberEnv('PORT') as any) || 8000;
+    let port = this.getNumberEnv('PORT') || 8000;
     this.app.listen(port, ()=> {
       callback(port);
       this.init();

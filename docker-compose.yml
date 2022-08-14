@@ -14,4 +14,3 @@ services:
       MYSQL_USER: ucodrr
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_PASSWORD: secret
-
