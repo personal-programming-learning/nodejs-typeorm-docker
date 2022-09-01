@@ -2,6 +2,7 @@ import { Column, Entity, OneToOne } from 'typeorm';
 
 import { BaseEntity } from '../../config/base.entity';
 import { CustomersEntity } from '../../customer/entities/customer.entity';
+import { RoleType } from '../dto/user.dto';
 
 @Entity({
   name: "users"
@@ -20,6 +21,9 @@ export class UserEntity extends BaseEntity {
   @Column({ length: 100 })
   email!:string;
 
+  @Column({ length: 10 })
+  phone!:string;
+
   @Column({ select: false })
   password!:string;
 
@@ -28,6 +32,12 @@ export class UserEntity extends BaseEntity {
 
   @Column()
   province!:string;
+
+  @Column({
+    type: "enum", enum: RoleType,
+    nullable: false,
+  })
+  role!: RoleType;
 
   @OneToOne(() => CustomersEntity, (customer) => customer.user)
   customer!: CustomersEntity;

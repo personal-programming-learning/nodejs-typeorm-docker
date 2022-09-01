@@ -9,6 +9,9 @@
     "start:dev": "npm run build-ts && export ENV=dev && cp -r environments/. dist/environments && concurrently \"tsc -w\" \"nodemon index.js \" ",
     "start:prod": "SET ENV=production && npm start",
     "dev": "export ENV=dev && nodemon index.ts",
+    "typeorm": "typeorm-ts-node-esm -d ./src/config/data.source.ts",
+    "m:gen": "npm run typeorm migration:generate",
+    "m:run": "npm run typeorm migration:run",
     "build-ts": "rm -rf dist && tsc --sourceMap false",
     "copy_env_dev": "mkdir -p ./dist/environments && cp environments/.dev.env dist/environments/.",
     "build:dev": "npm run build-ts && npm run copy_env_dev && cp -r src/templates/. dist/src/templates && cp package.json ./dist/ && cp Dockerfile.dev ./dist/Dockerfile"
@@ -23,6 +26,7 @@
     "express": "^4.18.1",
     "morgan": "^1.10.0",
     "mysql2": "^2.3.3",
+    "reflect-metadata": "^0.1.13",
     "typeorm": "^0.3.7",
     "typeorm-naming-strategies": "^4.1.0",
     "typescript": "^4.7.4"

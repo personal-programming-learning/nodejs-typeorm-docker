@@ -1,3 +1,12 @@
+# Anotaciones
+
+## Migraciones
+Ejecutar migración
+```
+npm run m:gen -- src/migrations/ChangeUser
+```
+
+
 # Curso de NodeJS con TypeScript y TypeORM
 
 En este curso aprenderas como generar una API REST compleja con `NodeJS` utilizando como lenguage core `TypeScript` y `TypeORM` como ORM SQL.
