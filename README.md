@@ -1,10 +1,24 @@
 # Anotaciones
 
 ## Migraciones
+
+### Migraciones en base a entidades, cuando estamos desde cero la db
 Ejecutar migración
 ```
-npm run m:gen -- src/migrations/ChangeUser
+# Crear archivo con las migraciones
+npm run m:gen -- src/migrations/InitDb
+# Ejecutar migraciones
+npm run m:run
 ```
+### Migraciones en base a cambios
+Ejecutar migración
+```
+# Crear archivo con las migraciones con los cambios
+npm run m:gen -- src/migrations/ChangeUser
+# Ejecutar migraciones
+npm run m:run
+```
+
 
 
 # Curso de NodeJS con TypeScript y TypeORM
