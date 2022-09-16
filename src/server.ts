@@ -5,6 +5,7 @@ import cors from 'cors';
 import { DataSource } from 'typeorm';
 
 import { UserRouter } from './user/user.router';
+import { CategoryRouter } from './category/category.router';
 import { ConfigServer } from './config/config';
 
 export class ServerBootstrap extends ConfigServer {
@@ -30,6 +31,7 @@ export class ServerBootstrap extends ConfigServer {
   public routers(): Array<express.Router>{
     return [
       new UserRouter().router,
+      new CategoryRouter().router,
     ];
   }
 
